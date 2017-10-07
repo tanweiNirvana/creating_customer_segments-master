@@ -12137,9 +12137,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:我认为第32样本点代表餐饮业客户，因为这个客户将大量花费用在新鲜菜的购买上。</strong></p>
-<p><strong>我认为第66样本点代表零售商，因为这个客户主要花费在一些杂货商品和洗涤剂、纸上，而并没有一些食物的花费。</strong></p>
-<p><strong>我认为第100样本点代表超市，因为这个客户在所有产品类型上都进行了一定的花费。</strong></p>
+<p><strong>回答:我认为第32样本点代表餐饮业客户，因为这个客户将大量花费用在新鲜菜的购买上，其对新鲜食品的购买超过了75%以上的客户，而对其他产品的购买量比大部分客户都低。</strong></p>
+<p><strong>我认为第66样本点代表零售商，因为这个客户主要花费在一些杂货商品和洗涤剂、纸上，超过了一半以上客户，而食物的花费远低于正常客户。</strong></p>
+<p><strong>我认为第100样本点代表超市，因为这个客户在所有产品类型上都进行了一定的花费，并且购买量超过了大半客户，有些商品的购买量甚至超过75%的客户。</strong></p>
 
 </div>
 </div>
@@ -14057,7 +14057,7 @@ DMMwDMMwjCny/wF2eAYjCf/r7QAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:特征之间并没有很好的相关性，这也验证了我尝试预测的特征的相关性，数据为左偏分布。</strong></p>
+<p><strong>回答:通过观察发现Milk、Grocety、Detergents_Paper这三个特征之间相互关联，其中一个属性值的增加往往会增加其他两个属性的值。而我所预测的Frozen特征与Fresh、Delicatessen并没有很好的关联性，与Milk、Grocety、Detergents_Paper有一定的相关性，当Frozen购买量增加时，这三种产品的购买量会相应减少。但是这个相关性并不好，因为有一定的非相关情况，而且其相关程度并不稳定。所以我认为这验证了我预测特征的相关性。数据为左偏分布。</strong></p>
 
 </div>
 </div>
@@ -19074,7 +19074,7 @@ MBgMBsOmwDg/BoPBYDAYDAaDYVNgnB+DwWAwGAwGg8GwKfi/tBsM3KOlZsQAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:65,66,75,128,137,142,154是在多个特征下的异常数据点，它们应该从数据集中移除，因为当数据在多个特征中为异常值时，这个数据往往偏离了数据集，由前面的统计数据也可知道，数据中的最大值是偏离数据集非常远的。</strong></p>
+<p><strong>回答:65,66,75,128,154是在多个特征下的异常数据点，它们应该从数据集中移除，因为当数据在多个特征中为异常值时，这个数据往往偏离了数据集，由前面的统计数据也可知道，数据中的最大值是偏离数据集非常远的。</strong></p>
 
 </div>
 </div>
@@ -19716,7 +19716,7 @@ TkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xd3be320&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xcb3ef98&gt;</pre>
 </div>
 
 </div>
@@ -20869,7 +20869,7 @@ iIiIiIjIQzGgIyIiIiIi8lAM6IiIiIiIiDwUAzoiIiIiIiIPxYCOiIiIiIjIQzGgIyIiIiIi8lAM
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
     <span class="n">clusterer</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
 
     <span class="c1"># TODO：预测每一个点的簇</span>
@@ -20908,6 +20908,12 @@ iIiIiIjIQzGgIyIiIiIi8lAM6IiIiIiIiDwUAzoiIiIiIiIPxYCOiIiIiIjIQzGgIyIiIiIi8lAM
 7 : 0.36177392733
 8 : 0.350809564896
 9 : 0.357817219897
+10 : 0.368614617966
+11 : 0.354774046193
+12 : 0.353740766014
+13 : 0.369266280387
+14 : 0.356016080414
+15 : 0.343034244733
 </pre>
 </div>
 </div>
@@ -20950,7 +20956,7 @@ iIiIiIjIQzGgIyIiIiIi8lAM6IiIiIiIiDwUAzoiIiIiIiIPxYCOiIiIiIjIQzGgIyIiIiIi8lAM
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>9 : 0.428047966569
+<pre>15 : 0.428047966569
 </pre>
 </div>
 </div>
@@ -20984,6 +20990,12 @@ iIiIiIjIQzGgIyIiIiIi8lAM6IiIiIiIiDwUAzoiIiIiIiIPxYCOiIiIiIjIQzGgIyIiIiIi8lAM
 <p>7 : 0.36177392733</p>
 <p>8 : 0.350809564896</p>
 <p>9 : 0.357817219897</p>
+<p>10 : 0.368614617966</p>
+<p>11 : 0.354774046193</p>
+<p>12 : 0.353740766014</p>
+<p>13 : 0.369266280387</p>
+<p>14 : 0.356016080414</p>
+<p>15 : 0.343034244733</p>
 <p><strong>其中两个聚类数目取得最佳轮廓系数</strong></p>
 
 </div>
@@ -21878,7 +21890,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答：我们可以通过对两种不同的客户同时进行A/B测试，然后根据不同分类的客户的反馈来对客户的派送服务进行划分。因为分类后的客户是在购买产品上有一定差别的，客户的类型也是有一定差别的，比如餐饮类客户更加需要新鲜的产品，而零售类客户对于产品的新鲜程度没有那么高的要求。</strong></p>
+<p><strong>回答：根据我们聚类所分出的两种类型，对两种类型的客户分别进行A/B测试。通过对一种类型的客户进行两种不同的派送策略，并收集客户对于不同派送策略的反馈来确定这一类型客户是否可以比较好的更改派送服务周期。得出这种结论的依据是不同的客户对于派送周期的要求是不一样的，餐饮类客户可能更加需要新鲜的产品，而零售也对于派送周期并没有那么紧张。不同的派送服务可以在满足客户需求的情况下降低批发商的成本。</strong></p>
 
 </div>
 </div>
